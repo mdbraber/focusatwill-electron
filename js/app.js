@@ -1,6 +1,11 @@
 const {ipcRenderer} = require('electron');
 const {remote} = require('electron');
 
+function notify(body) {
+		showControlChanges = true;
+		new Notification("Focus @ Will",{ body: body });
+}
+
 ipcRenderer.on('focusatwill', function(event, args){
 
     var control = args[0];
@@ -52,13 +57,13 @@ ipcRenderer.on('focusatwill', function(event, args){
 	else if (control == 'set-intensity' && argument) {
 		let offsetX = 79;
 		switch (argument) {
-		  case("low") :
+		  case("Low") :
 		  	offsetX = 10;
 			break;
-		  case("medium") :
+		  case("Medium") :
 		  	offsetX = 79;
 			break;
-		  case("high") :
+		  case("High") :
 		  	offsetX = 148;
 			break;
 		}
