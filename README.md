@@ -14,7 +14,7 @@ Prerequisits:
 ### Start the app with electron
 
 ```
-npm install -g electron
+npm install electron --save-dev
 npm install
 npm start
 ```
