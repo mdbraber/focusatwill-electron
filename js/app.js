@@ -1,11 +1,6 @@
 const {ipcRenderer} = require('electron');
 const {remote} = require('electron');
 
-function notify(body) {
-		showControlChanges = true;
-		new Notification("Focus @ Will",{ body: body });
-}
-
 ipcRenderer.on('focusatwill', function(event, args){
 
     var control = args[0];
