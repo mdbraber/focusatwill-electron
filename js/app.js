@@ -16,6 +16,7 @@ ipcRenderer.on('focusatwill', function(event, args){
 		if (showTrackChanges) {
 			webView.executeJavaScript('$(".track").bind("DOMSubtreeModified",function() { if($(".track").text() != "") { require("electron");new Notification("Currently playing", { body: $(".artist").text().substr(4) + "\\n" + $(".track").text()}); } });');
 		}
+		webView.executeJavaScript('$(".time").bind("DOMSubtreeModified",function() { if($(".time").text() == "000") { require("electron");new Notification("Timer finished!", {body: "Take a break..."} ); }});');
 		webView.executeJavaScript('$(".play").first().click()');
 
 	}
