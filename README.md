@@ -1,6 +1,6 @@
-# Focus @ Will-electron
+# focusatwill-electron
 
-Standalone Focus @ Will app in Electron
+Standalone Focus @ Will app (in Electron) featuring keyboard shortcuts, notifications and menu items for most functions.
 
 ## Installation
 
@@ -37,3 +37,7 @@ mv "Focus @ Will-darwin-x64/Focus @ Will.app" /Applications/
 npm i electron-installer-dmg -g
 electron-installer-dmg "Focus @ Will-darwin-x64/Focus @ Will.app" "Focus @ Will"
 ```
+
+## Credits
+
+Thanks to [Philipp Keller](https://github.com/philippkeller/goodbudget-electron) for pointers in his Github repository.
