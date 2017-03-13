@@ -21,19 +21,19 @@ var genres = [
 	"Oct Beta Test",
 	"Cafe Focus Beta",
 	"Cafe Creative Beta",
-	"Drums & Hums Beta",
-	"Drums & Hums Turbo Beta",
-	"Drums Zone Beta",
-	"Drums Zone Turbo Beta",
-	"Hand Drums & Hums Beta",
-	"Hand Drums & Hums Turbo Beta",
+	"Drums && Hums Beta",
+	"Drums && Hums Turbo Beta",
+	"Drum Zone Beta",
+	"Drum Zone Turbo Beta",
+	"Hand Drums && Hums Beta",
+	"Hand Drums && Hums Turbo Beta",
 	"Kora Beta",
 	"Kora Beta w/Entrainment"
 ];
 
 var genreMenuString = '[{ label: "Genre",\nsubmenu: [\n';
 for (g in genres) {
-		genreMenuString += '{ label: "'+genres[g]+'", click: function() { execute(["set-genre","'+genres[g]+'"]); }},\n';
+		genreMenuString += '{ label: "'+genres[g]+'", click: function() { execute(["set-genre","'+genres[g].replace("&&","&")+'"]); }},\n';
 }
 genreMenuString += ']}];';
 
@@ -42,7 +42,7 @@ var menuArray = [{
     submenu: [
         { label: "About Application", selector: "orderFrontStandardAboutPanel:" },
 		{ label: "Reload", click(item, win) { win.reload(); }},
-		{ label: "Toggle DevTools", 
+		{ label: "Toggle && DevTools", 
           accelerator: process.platform === "darwin" ? "Alt+Command+I" : "Ctrl+Shift+I",
           click(item, win) { win.toggleDevTools(); }},
         { type: "separator" },
