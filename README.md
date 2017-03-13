@@ -2,6 +2,10 @@
 
 Standalone Focus @ Will app in Electron
 
+## Installation
+
+Download and install from [latest binary](https://github.com/mdbraber/focusatwill-electron/releases/tag/1.0)
+
 ## Installation from source
 
 If you are on Windows/Linux you need to install from source. 
