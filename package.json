@@ -1,0 +1,20 @@
+{
+  "name": "Focus @ Will",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "Maarten den Braber",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.6.2",
+    "electron-installer-dmg": "^0.1.2",
+    "electron-prebuilt": "^1.4.13"
+  },
+  "dependencies": {
+    "keytar": "^3.0.2"
+  }
+}
