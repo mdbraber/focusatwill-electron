@@ -64,7 +64,7 @@ var menuArray = [{
       { label: "Toggle Timer", accelerator: "Shift+CmdOrCtrl+T", click: function() { execute(["toggle-timer"]); }},
       { label: "Play/Pause", accelerator: "Shift+CmdOrCtrl+P", click: function() { execute(["playpause"]); }},
       { label: "Play", click: function() { execute(["play"]); }},
-      { label: "Pause", click: function() { execute(["pause"]); }},
+      { label: "Pause", click: function() { execute(["pause"]); }, enabled: false },
       { label: "Next", accelerator: "Shift+CmdOrCtrl+N", click: function() { execute(["next"]); }}
  	]}, {
 	label: "Timer",

@@ -2,7 +2,7 @@ const electron = require('electron');
 // Module to control application life.
 const {app, globalShortcut} = electron;
 // Module to create native browser window.
-const {BrowserWindow} = electron;
+const {BrowserWindow, ipcMain, Menu} = electron;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -109,4 +109,10 @@ app.on('ready', () => {
     win.webContents.send("focusatwill", ['loaded']);
   });
 
+});
+
+ipcMain.on("enablePlayButton", (event, state) => {
+    let appMenu = Menu.getApplicationMenu();
+    appMenu.items[2].submenu.items[2].enabled = state;
+    appMenu.items[2].submenu.items[3].enabled = !state;
 });

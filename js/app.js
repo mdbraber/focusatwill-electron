@@ -5,7 +5,7 @@ ipcRenderer.on('focusatwill', function(event, args){
 
     var control = args[0];
 	var argument = null;
-	var showTrackChanges = true;
+	var showTrackChanges = false;
   	var webView = document.querySelector('webview#focusatwill');
 
 	if(args[1]) {
@@ -17,8 +17,9 @@ ipcRenderer.on('focusatwill', function(event, args){
 			webView.executeJavaScript('$(".track").bind("DOMSubtreeModified",function() { if($(".track").text() != "") { require("electron");new Notification("Currently playing", { body: $(".artist").text().substr(4) + "\\n" + $(".track").text()}); } });');
 		}
 		webView.executeJavaScript('$(".time").bind("DOMSubtreeModified",function() { if($(".time").text() == "000") { require("electron");new Notification("Timer finished!", {body: "Take a break..."} ); }});');
-		webView.executeJavaScript('$(".play").first().click()');
+		webView.executeJavaScript('function create(t) { var observer = new MutationObserver(function(mutations) { mutations.forEach(function(mutation) { var state = !(t.getAttribute("data-player-state") == "playing"); require("electron").ipcRenderer.send("enablePlayButton",state); console.log(state); }); }); observer.observe(t, { attributes: true }); } create(document.getElementsByClassName("play")[0]);');
 
+		webView.executeJavaScript('$(".play").first().click()');
 	}
 	else if (control == 'playpause') {
 		webView.executeJavaScript('$(".play").first().click()');
